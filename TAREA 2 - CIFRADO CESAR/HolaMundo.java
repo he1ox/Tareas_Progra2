@@ -22,7 +22,7 @@ public class HolaMundo {
     }
 
     /**
-     * Este método es capaz de codificar/decodificar String con el cifrado
+     * Esta función es capaz de codificar/decodificar String con el cifrado
      * cesar.
      *
      * @param opcion "codificar", "decodificar".
