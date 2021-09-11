@@ -1,0 +1,2 @@
+Jorge Lopez;4.0;3.0;5.0
+Mario Mendez;4.3;4.5;6.0
