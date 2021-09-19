@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Empleados" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b4dcc2bd-41ae-44ed-aa66-50f385e2422c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM tb_empleado;]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="enero" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="febrero" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="marzo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="promedio" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="79" y="16" width="493" height="32" uuid="7a4d1fb7-9d84-4229-af51-f0c2c2b4fc8b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Cooper Std Black" size="24" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE VENTAS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="79" height="79" uuid="abd1da83-0396-4fb3-b82b-56a77a65ea46"/>
+				<imageExpression><![CDATA["C:\\Users\\georg\\Documents\\ConexionesBD\\ComisionesMVC-CRUD\\src\\Icons\\multi-report-1.png"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="415" y="59" width="157" height="20" uuid="3a5a9ce3-f860-42d5-9509-ee7c59661d57"/>
+				<textElement>
+					<font fontName="Bahnschrift" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="293" height="20" uuid="a109f431-74c5-46dc-bb37-ac9ab721a511"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[Reporte generado automáticamente por el usuario]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="35" height="20" uuid="35ea524a-110e-4c24-bde2-f99a7f5db567"/>
+				<textElement>
+					<font fontName="Bahnschrift" size="12"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="0" width="65" height="20" uuid="a0f26e0c-eba8-4001-840c-493993579375"/>
+				<textElement>
+					<font fontName="Bahnschrift" size="12"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="fb0c0750-1851-446e-ba4f-2271eaea172e"/>
+				<textElement>
+					<font fontName="Bahnschrift" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="65" height="20" uuid="883eb6fd-b074-49a9-a57e-3411371d8ffc"/>
+				<textElement>
+					<font fontName="Bahnschrift" size="12"/>
+				</textElement>
+				<text><![CDATA[Enero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="0" width="55" height="20" uuid="4ecb7d6d-76e8-43fe-a233-df30d53dff33"/>
+				<textElement>
+					<font fontName="Bahnschrift" size="12"/>
+				</textElement>
+				<text><![CDATA[Febrero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="63" height="20" uuid="fb24ac3c-2f53-47db-8fd7-0d7ba33a94d5"/>
+				<textElement>
+					<font fontName="Bahnschrift" size="12"/>
+				</textElement>
+				<text><![CDATA[Marzo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="70" height="20" uuid="4be84798-36d0-466c-ade8-2bc2b2c04fda"/>
+				<textElement>
+					<font fontName="Bahnschrift" size="12"/>
+				</textElement>
+				<text><![CDATA[Promedio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="487" y="0" width="72" height="20" uuid="953350ab-7b98-4fca-888d-c45e32284095"/>
+				<textElement>
+					<font fontName="Bahnschrift" size="12"/>
+				</textElement>
+				<text><![CDATA[Total Ventas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="35" height="20" uuid="b8940a77-0852-4193-a826-c4df97f5ff50"/>
+				<textElement>
+					<font fontName="Bahnschrift"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="35" y="0" width="65" height="20" uuid="aa4eed42-5ee4-4177-9324-a48ce0f20f09"/>
+				<textElement>
+					<font fontName="Bahnschrift"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="171e23d7-3d61-4275-8641-49306f88eb85"/>
+				<textElement>
+					<font fontName="Bahnschrift"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="65" height="20" uuid="1d1c080c-55bb-4948-b4a6-e9a2eda53325"/>
+				<textElement>
+					<font fontName="Bahnschrift"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{enero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="0" width="55" height="20" uuid="0c70d3ed-cb6b-4ef9-928b-ebe8a933e9e4"/>
+				<textElement>
+					<font fontName="Bahnschrift"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{febrero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="63" height="20" uuid="5919af40-07b7-40ce-bd9e-07e448332a37"/>
+				<textElement>
+					<font fontName="Bahnschrift"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{marzo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="70" height="20" uuid="6c0793be-91e5-4284-bcd7-ebb6388d0b8e"/>
+				<textElement>
+					<font fontName="Bahnschrift"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{promedio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="487" y="0" width="72" height="20" uuid="ead8b132-3924-4972-a3ee-271fcf24c3a9"/>
+				<textElement>
+					<font fontName="Bahnschrift"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="17" splitType="Stretch">
+			<staticText>
+				<reportElement x="470" y="3" width="102" height="14" uuid="8812026c-d842-4c84-bc82-debb47c43812"/>
+				<textElement>
+					<font fontName="Bahnschrift"/>
+				</textElement>
+				<text><![CDATA[Créditos: Jorge López]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="213" y="0" width="80" height="20" uuid="2ec57640-0cd9-4eb1-b790-2723e1c93300"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="293" y="0" width="40" height="20" uuid="434ca24a-60b6-4d28-91e6-873758379d10"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="4" splitType="Stretch"/>
+	</summary>
+</jasperReport>
