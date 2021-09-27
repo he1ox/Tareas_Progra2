@@ -27,8 +27,10 @@ git clone https://github.com/he1ox/Wpf-CRUD.git
 ## Presentación 🚀
 <img align="center" src="https://i.ibb.co/wM6xR6k/1.png" alt="img" />
 <img align="center" src="https://i.ibb.co/QD28g5c/2.png" alt="img1" />
+<img align="center" src="https://www.formget.com/wp-content/uploads/2015/08/regex-email-validation.jpg" alt="img1" />
 <img align="center" src="https://i.ibb.co/hV6knhN/REGISTRO.png" alt="img1" />
 <img align="center" src="https://i.ibb.co/60ZDBKS/7.png" alt="img1" />
+
 <img align="center" src="https://i.ibb.co/S7tBZvd/3.png" alt="img1" />
 <img align="center" src="https://i.ibb.co/28C25J9/4.png" alt="img1" />
 <img align="center" src="https://i.ibb.co/QNV3MZ4/5.png" alt="img1" />
