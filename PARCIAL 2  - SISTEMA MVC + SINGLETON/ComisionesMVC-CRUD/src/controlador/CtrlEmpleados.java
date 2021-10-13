@@ -170,7 +170,7 @@ public class CtrlEmpleados implements ActionListener {
         //Botón ascendente
         if (e.getSource() == CtrlEmpleados.frmEmpleados.btnAscendente) {
             try {
-                modSql.updateTablaAscendente();
+                modSql.updateTabla("DESC");
             } catch (Exception ex) {
                 ex.printStackTrace(System.out);
             }
@@ -179,7 +179,7 @@ public class CtrlEmpleados implements ActionListener {
         //Botón descendente
         if (e.getSource() == CtrlEmpleados.frmEmpleados.btnDescendente) {
             try {
-                modSql.updateTablaDescendente();;
+                modSql.updateTabla("ASC");
             } catch (Exception ex) {
                 ex.printStackTrace(System.out);
             }
@@ -203,13 +203,13 @@ public class CtrlEmpleados implements ActionListener {
             String ItemSeleccionado = (String )CtrlEmpleados.frmEmpleados.cbxFiltros.getSelectedItem();
             switch(ItemSeleccionado){
                 case "Enero":
-                    modSql.filtroEnero();
+                    modSql.filtro(ItemSeleccionado.toLowerCase());
                     break;
                 case "Febrero":
-                    modSql.filtroFebrero();
+                    modSql.filtro(ItemSeleccionado.toLowerCase());
                     break;
                 case "Marzo":
-                    modSql.filtroMarzo();
+                    modSql.filtro(ItemSeleccionado.toLowerCase());
                     break;
                     
             }

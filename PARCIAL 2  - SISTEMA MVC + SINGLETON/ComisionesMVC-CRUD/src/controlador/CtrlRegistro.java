@@ -57,9 +57,9 @@ public class CtrlRegistro implements ActionListener {
 
                         //SQL
                         if (modSql.registrar(mod)) {
-                            JOptionPane.showMessageDialog(null, "Usuario registrado. Revista tu correo electrónico.");
                             limpiarCasillas();
-                            Email.enviarMail(mod.getCorreo(), mod.getNombre(),pass,mod.getUsuario());
+                            JOptionPane.showMessageDialog(null, "Usuario registrado. Revisa tu correo electrónico.");
+                            Email.enviarMail(mod, pass);
                             
                         } else {
                             JOptionPane.showMessageDialog(null, "Error al registrar");

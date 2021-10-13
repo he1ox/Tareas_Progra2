@@ -25,7 +25,7 @@ import javax.mail.internet.MimeMultipart;
 public class Email {
 
 
-    public static void enviarMail(String destinatario, String nombreDestinatario, String password, String username) {
+    public static void enviarMail(Usuario user,String pass) {
 
         try {
             Properties props = new Properties();
@@ -38,12 +38,12 @@ public class Email {
             String correoRemitente = "sistemadeventasgt@gmail.com";
             String passwordRemitente = "prueba123";
             
-            String correoReceptor = destinatario;
+            String correoReceptor = user.getCorreo();
             String asunto = "REGISTRO ÉXITOSO.";
-            String mensaje = "Hola "+nombreDestinatario+", gracias por registrarte! "
+            String mensaje = "Hola "+user.getNombre()+", gracias por registrarte! "
                     + "\n\nTus credenciales son: "
-                    + "\nNombre de usuario: " +username
-                    + "\nContraseña: " + password
+                    + "\nNombre de usuario: " +user.getUsuario()
+                    + "\nContraseña: " + pass
                     + "\n\nCodificado por @he1ox - Jorge López"
                     + "\nGitHub: https://github.com/he1ox";
             
@@ -62,7 +62,7 @@ public class Email {
                 Transport t = session.getTransport("smtp")) {
                 t.connect(correoRemitente,passwordRemitente);
                 t.sendMessage(message, message.getRecipients(Message.RecipientType.TO));
-                System.out.println("Correo electronico enviado al : " + destinatario);
+                System.out.println("Correo electronico enviado al : " + user.getCorreo());
             }
             
         } catch (AddressException ex) {

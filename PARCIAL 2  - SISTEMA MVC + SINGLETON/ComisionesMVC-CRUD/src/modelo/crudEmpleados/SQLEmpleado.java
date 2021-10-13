@@ -219,7 +219,7 @@ public class SQLEmpleado extends Conexion {
         }
     }
 
-    public void updateTablaAscendente() {
+    public void updateTabla(String orden) {
         try {
             DefaultTableModel modelo = new DefaultTableModel();
             CtrlEmpleados.frmEmpleados.tbEmpleados.setModel(modelo);
@@ -229,7 +229,7 @@ public class SQLEmpleado extends Conexion {
             Connection con = getConexion(baseDeDatos);
 
             //Orden ascendente
-            String sql = "SELECT id,codigo, nombre, enero, febrero, marzo, promedio, total FROM tb_empleado ORDER BY total DESC";
+            String sql = "SELECT id,codigo, nombre, enero, febrero, marzo, promedio, total FROM tb_empleado ORDER BY total "+orden;
 
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -265,51 +265,6 @@ public class SQLEmpleado extends Conexion {
         }
     }
 
-    public void updateTablaDescendente() {
-        try {
-            DefaultTableModel modelo = new DefaultTableModel();
-            CtrlEmpleados.frmEmpleados.tbEmpleados.setModel(modelo);
-
-            PreparedStatement ps = null;
-            ResultSet rs = null;
-            Connection con = getConexion(baseDeDatos);
-
-            //Orden ascendente
-            String sql = "SELECT id,codigo, nombre, enero, febrero, marzo, promedio, total FROM tb_empleado ORDER BY total ASC";
-
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-
-            ResultSetMetaData rsMd = rs.getMetaData();
-            int cantCol = rsMd.getColumnCount();
-
-            modelo.addColumn("Id");
-            modelo.addColumn("Codigo");
-            modelo.addColumn("Nombre");
-            modelo.addColumn("Enero");
-            modelo.addColumn("Febrero");
-            modelo.addColumn("Marzo");
-            modelo.addColumn("Promedio Ventas");
-            modelo.addColumn("Total ventas");
-
-            int[] anchos = {5, 10, 100, 15, 15, 15, 15, 40, 25};
-
-            for (int i = 0; i < cantCol; i++) {
-                CtrlEmpleados.frmEmpleados.tbEmpleados.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-            }
-
-            while (rs.next()) {
-                Object[] filas = new Object[cantCol];
-                for (int i = 0; i < cantCol; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace(System.out);
-        }
-    }
 
     public void generarPDF() {
         Connection con = getConexion(baseDeDatos);
@@ -520,7 +475,7 @@ public class SQLEmpleado extends Conexion {
 
     }
     
-    public void filtroEnero(){
+    public void filtro(String mes){
         try {
             DefaultTableModel modelo = new DefaultTableModel();
             CtrlEmpleados.frmEmpleados.tbEmpleados.setModel(modelo);
@@ -530,7 +485,7 @@ public class SQLEmpleado extends Conexion {
             Connection con = getConexion(baseDeDatos);
 
             //Orden ascendente
-            String sql = "SELECT id,codigo, nombre, enero FROM tb_empleado ORDER BY total ASC";
+            String sql = "SELECT id,codigo, nombre, "+mes+" FROM tb_empleado ORDER BY "+mes+" DESC";
 
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -541,7 +496,7 @@ public class SQLEmpleado extends Conexion {
             modelo.addColumn("Id");
             modelo.addColumn("Codigo");
             modelo.addColumn("Nombre");
-            modelo.addColumn("Enero");
+            modelo.addColumn(mes);
 //            modelo.addColumn("Febrero");
 //            modelo.addColumn("Marzo");
 //            modelo.addColumn("Promedio Ventas");
@@ -566,95 +521,5 @@ public class SQLEmpleado extends Conexion {
         }
     }
     
-    public void filtroFebrero(){
-        try {
-            DefaultTableModel modelo = new DefaultTableModel();
-            CtrlEmpleados.frmEmpleados.tbEmpleados.setModel(modelo);
-
-            PreparedStatement ps = null;
-            ResultSet rs = null;
-            Connection con = getConexion(baseDeDatos);
-
-            //Orden ascendente
-            String sql = "SELECT id,codigo, nombre, febrero FROM tb_empleado ORDER BY total ASC";
-
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-
-            ResultSetMetaData rsMd = rs.getMetaData();
-            int cantCol = rsMd.getColumnCount();
-
-            modelo.addColumn("Id");
-            modelo.addColumn("Codigo");
-            modelo.addColumn("Nombre");
-            modelo.addColumn("Febrero");
-//            modelo.addColumn("Febrero");
-//            modelo.addColumn("Marzo");
-//            modelo.addColumn("Promedio Ventas");
-//            modelo.addColumn("Total ventas");
-
-            int[] anchos = {5, 10, 100, 15};
-
-            for (int i = 0; i < cantCol; i++) {
-                CtrlEmpleados.frmEmpleados.tbEmpleados.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-            }
-
-            while (rs.next()) {
-                Object[] filas = new Object[cantCol];
-                for (int i = 0; i < cantCol; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace(System.out);
-        }
-    }
     
-    public void filtroMarzo(){
-        try {
-            DefaultTableModel modelo = new DefaultTableModel();
-            CtrlEmpleados.frmEmpleados.tbEmpleados.setModel(modelo);
-
-            PreparedStatement ps = null;
-            ResultSet rs = null;
-            Connection con = getConexion(baseDeDatos);
-
-            //Orden ascendente
-            String sql = "SELECT id,codigo, nombre, marzo FROM tb_empleado ORDER BY total ASC";
-
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-
-            ResultSetMetaData rsMd = rs.getMetaData();
-            int cantCol = rsMd.getColumnCount();
-
-            modelo.addColumn("Id");
-            modelo.addColumn("Codigo");
-            modelo.addColumn("Nombre");
-            modelo.addColumn("Marzo");
-//            modelo.addColumn("Febrero");
-//            modelo.addColumn("Marzo");
-//            modelo.addColumn("Promedio Ventas");
-//            modelo.addColumn("Total ventas");
-
-            int[] anchos = {5, 10, 100, 15};
-
-            for (int i = 0; i < cantCol; i++) {
-                CtrlEmpleados.frmEmpleados.tbEmpleados.getColumnModel().getColumn(i).setPreferredWidth(anchos[i]);
-            }
-
-            while (rs.next()) {
-                Object[] filas = new Object[cantCol];
-                for (int i = 0; i < cantCol; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace(System.out);
-        }
-    }
 }
